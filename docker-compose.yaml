@@ -1,10 +1,7 @@
 version: "3.9"
 services:
   flask:
-    build:
-      context: .
-    volumes:
-      - ./templates:/templates
+    image: wellshs/docker-memo:latest
     ports:
       - "80:5000"
   mongo:
@@ -12,7 +9,7 @@ services:
     volumes:
       - mongo:/data/db/
     ports:
-      - "8422:27017"
+      - "27017:27017"
 
 volumes:
   mongo:
